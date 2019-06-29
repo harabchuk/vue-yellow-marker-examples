@@ -11,11 +11,37 @@
 
 <script>
 import HighlightMixin from "@kognity/vue-yellow-marker";
+import SelectionMenu from "./components/SelectionMenu";
 
 export default {
   name: "ExampleComponent2",
   mixins: [HighlightMixin],
-  methods: {}
+  data() {
+    return {
+      // Mixin configuration
+      hlConfig: {
+        menus: {
+          selection: {
+            component: SelectionMenu,
+            actions: {
+              addHighlight: this.addHighlight
+            }
+          }
+        },
+        debounceDelay: 100
+      }
+    };
+  },
+  methods: {
+    addHighlight(color) {
+      this.removeMenu();
+      this.highlightSelection(this.onHighlightClicked, { color: color });
+      this.removeSelection();
+    },
+    onHighlightClicked() {
+      alert("Highlight clicked");
+    }
+  }
 };
 </script>
 
