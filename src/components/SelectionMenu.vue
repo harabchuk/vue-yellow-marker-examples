@@ -25,9 +25,8 @@
 </template>
 
 <script>
-import marker from "@kognity/vue-yellow-marker";
+import { KogContextMenu } from "@kognity/vue-yellow-marker";
 import "@kognity/vue-yellow-marker/dist/vue-yellow-marker.css";
-const KogContextMenu = marker.KogContextMenu;
 
 export default {
   name: "SelectionMenu",

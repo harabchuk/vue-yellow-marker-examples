@@ -9,11 +9,11 @@
 </template>
 
 <script>
-import marker from "@kognity/vue-yellow-marker";
+import { HighlightMixin } from "@kognity/vue-yellow-marker";
 
 export default {
   name: "ExampleComponent",
-  mixins: [marker.HighlightMixin],
+  mixins: [HighlightMixin],
   mounted() {
     // Example of highlighting text using the Mixin's API method 'highlight'
     const textQuote = { prefix: "", exact: "Parts", suffix: " of this" };
