@@ -10,12 +10,12 @@
 </template>
 
 <script>
-import HighlightMixin from "@kognity/vue-yellow-marker";
+import marker from "@kognity/vue-yellow-marker";
 import SelectionMenu from "./components/SelectionMenu";
 
 export default {
   name: "ExampleComponent2",
-  mixins: [HighlightMixin],
+  mixins: [marker.HighlightMixin],
   data() {
     return {
       // Mixin configuration

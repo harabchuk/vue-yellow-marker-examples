@@ -1,9 +1,8 @@
 <template>
-  <context-menu ref="context">
+  <kog-context-menu ref="context">
     <div slot="menuBody" class="flexContainer">
       <div
         class="option"
-        role="button"
         @touchend="addHighlight($event, color1)"
         @mouseup="addHighlight($event, color1)"
       >{{ 'Highlight' }}</div>
@@ -11,7 +10,6 @@
       <div
         class="circle"
         :style="{'background-color': color2}"
-        role="button"
         @touchend="addHighlight($event, color2)"
         @mouseup="addHighlight($event, color2)"
       ></div>
@@ -19,21 +17,22 @@
       <div
         class="circle"
         :style="{'background-color': color3}"
-        role="button"
         @touchend="addHighlight($event, color3)"
         @mouseup="addHighlight($event, color3)"
       ></div>
     </div>
-  </context-menu>
+  </kog-context-menu>
 </template>
 
 <script>
-import ContextMenu from "./ContextMenu";
+import marker from "@kognity/vue-yellow-marker";
+import "@kognity/vue-yellow-marker/dist/vue-yellow-marker.css";
+const KogContextMenu = marker.KogContextMenu;
 
 export default {
   name: "SelectionMenu",
   components: {
-    ContextMenu
+    KogContextMenu
   },
   data() {
     return {
