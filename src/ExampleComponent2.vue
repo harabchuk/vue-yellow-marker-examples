@@ -19,7 +19,7 @@ export default {
   data() {
     return {
       // Mixin configuration
-      hlConfig: {
+      ymConfig: {
         menus: {
           selection: {
             component: SelectionMenu,
@@ -34,9 +34,9 @@ export default {
   },
   methods: {
     addHighlight(color) {
-      this.removeMenu();
-      this.highlightSelection(this.onHighlightClicked, { color: color });
-      this.removeSelection();
+      this.ymRemoveMenu();
+      this.ymHighlightSelection(this.onHighlightClicked, { color: color });
+      this.ymRemoveSelection();
     },
     onHighlightClicked() {
       alert("Highlight clicked");

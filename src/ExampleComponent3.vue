@@ -20,7 +20,7 @@ export default {
       currentHighlightContext: null,
       currentHighlightElement: null,
       // Mixin configuration
-      hlConfig: {
+      ymConfig: {
         menus: {
           highlight: {
             component: SelectionMenu,
@@ -40,7 +40,7 @@ export default {
       exact: "Click",
       suffix: " on any"
     };
-    this.highlight(
+    this.ymHighlight(
       textQuote,
       this.onHighlightClicked,
       { color: "#FFB036" },
@@ -52,7 +52,7 @@ export default {
       exact: "context menu",
       suffix: "."
     };
-    this.highlight(
+    this.ymHighlight(
       textQuote2,
       this.onHighlightClicked,
       { color: "#FF6AD7" },
@@ -64,7 +64,7 @@ export default {
       exact: "highlight",
       suffix: " in this"
     };
-    this.highlight(
+    this.ymHighlight(
       textQuote3,
       this.onHighlightClicked,
       { color: "#FF6AD7" },
@@ -75,13 +75,13 @@ export default {
     onHighlightClicked(event, context, highlightElement) {
       this.currentHighlightContext = context;
       this.currentHighlightElement = highlightElement;
-      this.createHighlightMenu(context.nodes);
+      this.ymCreateHighlightMenu(context.nodes);
     },
     changeHighlight(color) {
       if(this.currentHighlightElement) {
         this.currentHighlightElement.color = color;
       }
-      this.removeMenu();
+      this.ymRemoveMenu();
     }
   }
 };

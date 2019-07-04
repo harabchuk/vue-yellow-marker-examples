@@ -17,7 +17,7 @@ export default {
   mounted() {
     // Example of highlighting text using the Mixin's API method 'highlight'
     const textQuote = { prefix: "", exact: "Parts", suffix: " of this" };
-    this.highlight(
+    this.ymHighlight(
       textQuote,
       this.onHighlightClicked,
       { color: "#FFB036" },
@@ -29,7 +29,7 @@ export default {
       exact: "highlighted with",
       suffix: " different"
     };
-    this.highlight(
+    this.ymHighlight(
       textQuote2,
       this.onHighlightClicked,
       { color: "#FF6AD7" },
